@@ -4,10 +4,10 @@
 	class Reptil extends Animal{
 		public $submerso;
 
-		public function __construct($peso, $comprimento, $altura, $cor, $nome, $submerso)
+		public function __construct($peso, $comprimento, $altura, $cor,$tipo , $nome, $submerso)
 		{
 
-			parent::__construct($peso, $comprimento, $altura, $cor, $nome);
+			parent::__construct($peso, $comprimento, $altura, $cor,$tipo , $nome);
 
 			$this->submerso = $submerso;
 

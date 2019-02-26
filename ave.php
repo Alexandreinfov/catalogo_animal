@@ -4,10 +4,10 @@
 	class Ave extends Animal{
 		public $altura_voo;
 
-		public function __construct($peso, $comprimento, $altura, $cor, $nome, $altura_voo)
+		public function __construct($peso, $comprimento, $altura, $cor, $tipo , $nome, $altura_voo)
 		{
 
-			parent::__construct($peso, $comprimento, $altura, $cor, $nome);
+			parent::__construct($peso, $comprimento, $altura, $cor, $tipo , $nome);
 
 			$this->altura_voo = $altura_voo;
 

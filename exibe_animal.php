@@ -1,5 +1,9 @@
 <?php  
-	
+	include("ave.php");
+	include("anfibio.php");
+	include("peixe.php");
+	include("reptil.php");
+	include("mamifero.php");
 	$animal = $_POST['tipo'];
 	
 echo '
@@ -9,44 +13,62 @@ echo '
  		<td>comprimento</td>
  		<td>altura</td>
  		<td>cor</td>
+ 		<td>Tipo</td>
  		<td>nome</td>
  	';
 
 	switch ($animal) {
 
 		case 'ave':
-		include("ave.php");
+		
 		echo "<td>Altura voo</td></tr>";
 
-		$ave = new Ave($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['altura_voo']);
+		$ave = new Ave($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['nome'],$_POST['altura_voo']);
 
 		
 		$ave->exibir_ave();
 		echo "</table>";
 
 		break;
+
 		case 'anfibio':
-		include("anfibio.php");
+		
+		echo "<td>submerso</td></tr>";
 
-		$anfibio = new Ave($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['submerso']);
+		$anfibio = new Anfibio($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['nome'],$_POST['submerso']);
 
+		$anfibio->exibir_anfibio();
+		echo "</table>";
 		break;
+
 		case 'peixe':
-		include("peixe.php");
+		
+		echo "<td>temperatura</td></tr>";
+		$peixe = new Peixe($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['nome'],$_POST['temperatura']);
 
-		$peixe = new Ave($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['temperatura']);
-
+		$peixe->exibir_peixe();
+		echo "</table>";
 		break;
+
 		case 'reptil':
-		include("reptil.php");
 
-		$reptil = new Ave($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['submerso']);
+		echo "<td>velocidade_max</td></tr>";
+		
 
+		$reptil = new Reptil($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['nome'],$_POST['submerso']);
+
+		$reptil->exibir_reptil();
+		echo "</table>";
 		break;
-		case 'mamifero':
-		include("mamifero.php");
-		$mamifero = new Ave($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['velocidade_max']);
 
+		case 'mamifero':
+
+		
+		echo "<td>velocidade_max</td></tr>";
+		$mamifero = new Mamifero($_POST['peso'],$_POST['comprimento'],$_POST['altura'],$_POST['cor'],$_POST['tipo'],$_POST['nome'],$_POST['velocidade_max']);
+
+		$mamifero->exibir_mamifero();
+		echo "</table>";
 		break;
 		
 	}

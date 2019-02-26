@@ -4,10 +4,10 @@
 	class Peixe extends Animal{
 		public $temperatura;
 
-		public function __construct($peso, $comprimento, $altura, $cor, $nome,$temperatura )
+		public function __construct($peso, $comprimento, $altura, $cor, $tipo , $nome,$temperatura )
 		{
 
-			parent::__construct($peso, $comprimento, $altura, $cor, $nome);
+			parent::__construct($peso, $comprimento, $altura, $cor, $tipo , $nome);
 
 			$this->temperatura = $temperatura;
 
